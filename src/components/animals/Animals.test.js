@@ -26,3 +26,18 @@ test("renders Animals imput", () => {
   const inputTextElement = screen.getByRole("textbox")
   expect(inputTextElement).toBeInTheDocument()
 })
+test("renders Animals select", () => {
+  render(<Animals/>)
+  const selectElement = screen.getByRole("combobox")
+  expect(selectElement).toBeInTheDocument()
+})
+test("renders Animals checkbox", () => {
+  render(<Animals/>)
+  const checkBoxElement = screen.getByRole("checkbox")
+  expect(checkBoxElement).toBeInTheDocument()
+})
+test("renders Animals button", () => {
+  render(<Animals/>)
+  const buttonElement = screen.getByRole("button")
+  expect(buttonElement).toBeInTheDocument()
+})

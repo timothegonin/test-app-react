@@ -1,43 +1,41 @@
 import { render, screen } from "@testing-library/react"
-import Animals from "./Animals"
+import GetByRole from "./GetByRole"
 
-test("renders Animals", () => {
-  render(<Animals/>)
-  const divElement = screen.getByText(/Animals/i)
-  expect(divElement).toBeInTheDocument()
+describe('Elements render correctly', () => {
+  test("Heading renders correctly", () => {
+    render(<GetByRole/>)
+    const headingElement = screen.getByRole("heading")
+    expect(headingElement).toBeInTheDocument()
+  })
+  test("Article renders correctly", () => {
+    render(<GetByRole/>)
+    const articleElement = screen.getByRole("article")
+    expect(articleElement).toBeInTheDocument()
+  })
 })
-test("renders Animals title", () => {
-  render(<Animals/>)
-  const titleElement = screen.getByRole("heading", {name :/Animals/i})
-  expect(titleElement).toBeInTheDocument()
-})
-test("renders Animals article", () => {
-  render(<Animals/>)
-  const articleElement = screen.getByRole("article")
-  expect(articleElement).toBeInTheDocument()
-})
+
 test("renders Animals image", () => {
-  render(<Animals/>)
+  render(<GetByRole/>)
   const imageElement = screen.getByRole("img")
   expect(imageElement).toBeInTheDocument()
 })
 test("renders Animals imput", () => {
-  render(<Animals/>)
+  render(<GetByRole/>)
   const inputTextElement = screen.getByRole("textbox")
   expect(inputTextElement).toBeInTheDocument()
 })
 test("renders Animals select", () => {
-  render(<Animals/>)
+  render(<GetByRole/>)
   const selectElement = screen.getByRole("combobox")
   expect(selectElement).toBeInTheDocument()
 })
 test("renders Animals checkbox", () => {
-  render(<Animals/>)
+  render(<GetByRole/>)
   const checkBoxElement = screen.getByRole("checkbox")
   expect(checkBoxElement).toBeInTheDocument()
 })
 test("renders Animals button", () => {
-  render(<Animals/>)
+  render(<GetByRole/>)
   const buttonElement = screen.getByRole("button")
   expect(buttonElement).toBeInTheDocument()
 })

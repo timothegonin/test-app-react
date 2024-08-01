@@ -25,6 +25,8 @@ describe('Elements render correctly', () => {
     expect(inputFirstNameElement).toBeInTheDocument()
     const inputFirstLastNameElement = screen.getByLabelText("Nom")
     expect(inputFirstLastNameElement).toBeInTheDocument()
+    const inputUserNameElement = screen.getByLabelText("Username")
+    expect(inputUserNameElement).toBeInTheDocument()
   })
   // test("Select renders correctly", () => {
   //   render(<GetByRole/>)

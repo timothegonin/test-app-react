@@ -10,6 +10,10 @@ function GetByLabelText() {
         <input type="text" id="lastname"/>
       </div>
       <div>
+        <label id="username-label">Username</label>
+        <input type="text"  aria-labelledby="username-label" />
+      </div>
+      <div>
         <label htmlFor="pet-select">Choisissez un animal:</label>
         <select name="pets" id="pet-select" size={3}>
           <option value="dragon">Dragon</option>

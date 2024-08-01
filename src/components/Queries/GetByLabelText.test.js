@@ -33,13 +33,13 @@ describe('Elements render correctly', () => {
   //   const selectElement = screen.getByRole("listbox")
   //   expect(selectElement).toBeInTheDocument()
   // })
-  // test("Checkbox renders correctly", () => {
-  //   render(<GetByRole/>)
-  //   const inputCheckBoxTermsElement = screen.getByRole("checkbox",{name: "Accept the terms and conditions"})
-  //   const inputCheckBoxNewsLetterElement = screen.getByRole("checkbox", {name: "I subscribe to the newsletter"})
-  //   expect(inputCheckBoxTermsElement).toBeInTheDocument()
-  //   expect(inputCheckBoxNewsLetterElement).toBeInTheDocument()
-  // })
+  test("Checkbox renders correctly", () => {
+    render(<GetByLabelText/>)
+    const inputCheckBoxTermsElement = screen.getByLabelText("Accept the terms and conditions")
+    const inputCheckBoxNewsLetterElement = screen.getByLabelText("I subscribe to the newsletter")
+    expect(inputCheckBoxTermsElement).toBeInTheDocument()
+    expect(inputCheckBoxNewsLetterElement).toBeInTheDocument()
+  })
   // test("renders Animals button", () => {
   //   render(<GetByRole/>)
   //   const buttonElement = screen.getByRole("button")

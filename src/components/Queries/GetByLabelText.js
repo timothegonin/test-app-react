@@ -30,7 +30,7 @@ function GetByLabelText() {
       <div>
         <label>
           <input type="checkbox" id="newsletter" />
-          I subscribe to the newsletter
+          <span>I subscribe to the newsletter</span>
         </label>
       </div>
     </form>

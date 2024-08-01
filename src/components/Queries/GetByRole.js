@@ -25,9 +25,15 @@ function GetByRole() {
           </select>
         </div>
         <div>
-          <label htmlFor="">
+          <label>
             <input type="checkbox" id="terms and conditions" />
             Accept the terms and conditions
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" id="newsletter" />
+            I subscribe to the newsletter
           </label>
         </div>
       </form>

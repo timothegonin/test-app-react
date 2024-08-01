@@ -29,12 +29,14 @@ describe('Elements render correctly', () => {
   })
   test("Checkbox renders correctly", () => {
     render(<GetByRole/>)
-    const inputCheckBoxElement = screen.getByRole("checkbox")
-    expect(inputCheckBoxElement).toBeInTheDocument()
+    const inputCheckBoxTermsElement = screen.getByRole("checkbox",{name: "Accept the terms and conditions"})
+    const inputCheckBoxNewsLetterElement = screen.getByRole("checkbox", {name: "I subscribe to the newsletter"})
+    expect(inputCheckBoxTermsElement).toBeInTheDocument()
+    expect(inputCheckBoxNewsLetterElement).toBeInTheDocument()
   })
   test("renders Animals button", () => {
     render(<GetByRole/>)
     const buttonElement = screen.getByRole("button")
     expect(buttonElement).toBeInTheDocument()
   })
-})
+}) 

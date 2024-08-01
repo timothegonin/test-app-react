@@ -4,8 +4,10 @@ import GetByRole from "./GetByRole"
 describe('Elements render correctly', () => {
   test("Heading renders correctly", () => {
     render(<GetByRole/>)
-    const headingElement = screen.getByRole("heading")
-    expect(headingElement).toBeInTheDocument()
+    const headingH1Element = screen.getByRole("heading", {level:1})
+    expect(headingH1Element).toBeInTheDocument()
+    const headingH2Element = screen.getByRole("heading", {level:2})
+    expect(headingH2Element).toBeInTheDocument()
   })
   test("Article renders correctly", () => {
     render(<GetByRole/>)

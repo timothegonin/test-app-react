@@ -11,6 +11,7 @@ function GetByRole() {
         </article>
         <button>Submit</button>
       </div>
+      <h2>Inscription</h2>
       <form>
         <div>
           <label htmlFor="firstname" >Prénom</label>

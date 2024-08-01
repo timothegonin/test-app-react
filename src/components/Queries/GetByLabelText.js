@@ -33,6 +33,14 @@ function GetByLabelText() {
           <span>I subscribe to the newsletter</span>
         </label>
       </div>
+      <label>
+        Animal préféré
+        <input type="text" />
+      </label>
+      <label>
+        Animal préféré
+        <textarea />
+      </label>
     </form>
   )
 }

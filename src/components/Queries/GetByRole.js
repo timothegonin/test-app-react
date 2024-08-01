@@ -11,10 +11,13 @@ function GetByRole() {
         </article>
         <button>Submit</button>
       </div>
+      <h2>Inscription</h2>
       <form>
         <div>
-          <label htmlFor="name" >Nom</label>
-          <input type="text" id="name"/>
+          <label htmlFor="firstname" >Prénom</label>
+          <input type="text" id="firstname"/>
+          <label htmlFor="lastname" >Nom</label>
+          <input type="text" id="lastname"/>
         </div>
         <div>
           <label htmlFor="pet-select">Choisissez un animal:</label>
@@ -25,9 +28,15 @@ function GetByRole() {
           </select>
         </div>
         <div>
-          <label htmlFor="">
+          <label>
             <input type="checkbox" id="terms and conditions" />
             Accept the terms and conditions
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" id="newsletter" />
+            I subscribe to the newsletter
           </label>
         </div>
       </form>

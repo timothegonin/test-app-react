@@ -4,8 +4,10 @@ import GetByRole from "./GetByRole"
 describe('Elements render correctly', () => {
   test("Heading renders correctly", () => {
     render(<GetByRole/>)
-    const headingElement = screen.getByRole("heading")
-    expect(headingElement).toBeInTheDocument()
+    const headingH1Element = screen.getByRole("heading", {level:1})
+    expect(headingH1Element).toBeInTheDocument()
+    const headingH2Element = screen.getByRole("heading", {level:2})
+    expect(headingH2Element).toBeInTheDocument()
   })
   test("Article renders correctly", () => {
     render(<GetByRole/>)
@@ -19,8 +21,10 @@ describe('Elements render correctly', () => {
   })
   test("Input renders correctly", () => {
     render(<GetByRole/>)
-    const inputTextElement = screen.getByRole("textbox")
-    expect(inputTextElement).toBeInTheDocument()
+    const inputFirstNameElement = screen.getByRole("textbox",{name:"Prénom"})
+    expect(inputFirstNameElement).toBeInTheDocument()
+    const inputFirstLastNameElement = screen.getByRole("textbox",{name:"Nom"})
+    expect(inputFirstLastNameElement).toBeInTheDocument()
   })
   test("Select renders correctly", () => {
     render(<GetByRole/>)
@@ -29,12 +33,14 @@ describe('Elements render correctly', () => {
   })
   test("Checkbox renders correctly", () => {
     render(<GetByRole/>)
-    const inputCheckBoxElement = screen.getByRole("checkbox")
-    expect(inputCheckBoxElement).toBeInTheDocument()
+    const inputCheckBoxTermsElement = screen.getByRole("checkbox",{name: "Accept the terms and conditions"})
+    const inputCheckBoxNewsLetterElement = screen.getByRole("checkbox", {name: "I subscribe to the newsletter"})
+    expect(inputCheckBoxTermsElement).toBeInTheDocument()
+    expect(inputCheckBoxNewsLetterElement).toBeInTheDocument()
   })
   test("renders Animals button", () => {
     render(<GetByRole/>)
     const buttonElement = screen.getByRole("button")
     expect(buttonElement).toBeInTheDocument()
   })
-})
+}) 

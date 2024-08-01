@@ -13,8 +13,10 @@ function GetByRole() {
       </div>
       <form>
         <div>
-          <label htmlFor="name" >Nom</label>
-          <input type="text" id="name"/>
+          <label htmlFor="firstname" >Prénom</label>
+          <input type="text" id="firstname"/>
+          <label htmlFor="lastname" >Nom</label>
+          <input type="text" id="lastname"/>
         </div>
         <div>
           <label htmlFor="pet-select">Choisissez un animal:</label>

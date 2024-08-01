@@ -19,8 +19,10 @@ describe('Elements render correctly', () => {
   })
   test("Input renders correctly", () => {
     render(<GetByRole/>)
-    const inputTextElement = screen.getByRole("textbox")
-    expect(inputTextElement).toBeInTheDocument()
+    const inputFirstNameElement = screen.getByRole("textbox",{name:"Prénom"})
+    expect(inputFirstNameElement).toBeInTheDocument()
+    const inputFirstLastNameElement = screen.getByRole("textbox",{name:"Nom"})
+    expect(inputFirstLastNameElement).toBeInTheDocument()
   })
   test("Select renders correctly", () => {
     render(<GetByRole/>)

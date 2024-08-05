@@ -6,5 +6,7 @@ describe('Elements render correctly', () => {
     render(<GetByAltText/>)
     const imageElement = screen.getByAltText("Dragon")
     expect(imageElement).toBeInTheDocument()
+    const imageButtonElement = screen.getByAltText("valider")
+    expect(imageButtonElement).toBeInTheDocument()
   })
 }) 

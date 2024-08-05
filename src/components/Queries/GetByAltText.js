@@ -1,4 +1,5 @@
 import React from 'react'
+import btnImg from '../../images/green-button.png'
 
 function GetByAltText() {
   return (
@@ -10,7 +11,9 @@ function GetByAltText() {
         <label htmlFor="lastname" >Nom</label>
         <input type="text" id="lastname" placeholder='Indiquez votre nom' value='Smith' onChange={()=>{}}/>
         <textarea value="Bonjour à tous" />
-        <input type='submit' value={'Valider'}/>
+        <div>
+          <input type='image' alt="valider" src={btnImg} width='40'/>
+        </div>
       </form>
     </React.Fragment>
   )

@@ -1,11 +1,15 @@
 // import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import GetByDisplayValue from './components/Queries/GetDisplayValue';
+import GetAllByRole from './components/Queries/GetAllByRole';
 
 function App() {
+  const buttons = ["Button 1","Button 2", "Button 3"]
+  const [btns, setBtns] = useState(buttons)
+
   return (
     <div className="App">
-      <GetByDisplayValue/>
+      <GetAllByRole btns={btns}/>
     </div>
   );
 }

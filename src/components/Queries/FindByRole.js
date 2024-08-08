@@ -7,7 +7,7 @@ function FindByRole() {
   useEffect(() => {
     setTimeout(() => {
       setIsDark(true)
-    }, 2000);
+    }, 500);
   }, [])
   
 

@@ -2,9 +2,9 @@ import { render,screen } from "@testing-library/react";
 import FindByRole from "./FindByRole";
 
 describe('GetBy vs QueryBy', () => {
-  test('Buttons render correctly', () => {
+  test('Buttons render correctly', async () => {
     render(<FindByRole/>)
-    const buttonThemeDark = screen.getByRole('button', {name:'Dark'})
+    const buttonThemeDark = await screen.findByRole('button', {name:'Light'})
     expect(buttonThemeDark).toBeInTheDocument()
   })
 })

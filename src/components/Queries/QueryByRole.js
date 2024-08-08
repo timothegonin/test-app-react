@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 function QueryByRole() {
 
   const [isDark, setIsDark] = useState(false)
-  const btn = isDark ? (<button onClick={()=> setIsDark(false)}>Light</button>) : (<button onClick={()=> setIsDark(true)}>Dark</button>)
+  const btn = <button onClick={()=> setIsDark(!isDark)}>{isDark ? 'Light' : 'Dark'}</button>
 
   return (
     <div style={{background: isDark && "grey"}}>

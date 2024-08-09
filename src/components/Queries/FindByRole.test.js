@@ -1,4 +1,4 @@
-import { render,screen,waitForElementToBeRemoved } from "@testing-library/react";
+import { render,screen,waitFor } from "@testing-library/react";
 import FindByRole from "./FindByRole";
 
 describe('GetBy vs QueryBy', () => {
@@ -9,8 +9,11 @@ describe('GetBy vs QueryBy', () => {
   })
   test('Check if image is not in the document', async () => {
     render(<FindByRole/>)
-    await waitForElementToBeRemoved(()=> screen.queryByRole('img'), {timeout:3000})
-    const imageElement = screen.queryByRole('img')
-    expect(imageElement).toBeNull()
+    // await waitForElementToBeRemoved(()=> screen.queryByRole('img'), {timeout:3000})
+    // const imageElement = screen.queryByRole('img')
+    // expect(imageElement).toBeNull()
+    await waitFor(() => {
+      expect(screen.queryByRole('img')).not.toBeInTheDocument()
+    }, {timeout:3000})
   })
 })

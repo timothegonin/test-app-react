@@ -3,10 +3,12 @@ import React, {useEffect,useState} from 'react'
 function FindByRole() {
 
   const [isDark, setIsDark] = useState(false)
+  const [isAvailable, setIsAvailable] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
       setIsDark(true)
+      setIsAvailable(false)
     }, 2000);
   }, [])
   
@@ -16,7 +18,9 @@ function FindByRole() {
   return (
     <div style={{background: isDark && "grey"}}>
       {btn}
-
+      <div>
+        {isAvailable && <img src="https://cdn.pixabay.com/photo/2024/06/04/10/07/black-dragon-8808267_960_720.png" alt="Dragon" width={400}/>}
+      </div>
       <p className="container">Veuilez indiquer votre identité</p>
       <form>
         <div>

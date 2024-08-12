@@ -40,7 +40,15 @@ describe('Learn User Interacationss', () => {
   })
   it("Should renders counter button correctly", () => {
     render(<IncrementCount/>)
-    const counterButtonElement = screen.getByText(/Vous avez cliqué (.*?) fois/)
+    const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    // const counterButtonElement = screen.getByText(/Vous avez cliqué (.*?) fois/)
     expect(counterButtonElement).toBeInTheDocument()
   })
+  it("Should show 0 in counter and button before click", () => {
+    render(<IncrementCount/>)
+    const counterElement = screen.getByRole('heading', {level:1})
+    const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    expect(counterElement).toHaveTextContent('0')
+    expect(counterButtonElement).toHaveTextContent('Vous avez cliqué 0 fois')
+  } )
 })

@@ -32,6 +32,15 @@ console.log(userEvent)
 
 */
 
-describe('Learn Pointer Interacationss', () => {
-  render(<IncrementCount/>)
+describe('Learn User Interacationss', () => {
+  it("Should renders counter correctly", () => {
+    render(<IncrementCount/>)
+    const counterElement = screen.getByRole('heading', {level:1})
+    expect(counterElement).toBeInTheDocument()
+  })
+  it("Should renders counter button correctly", () => {
+    render(<IncrementCount/>)
+    const counterButtonElement = screen.getByText(/Vous avez cliqué (.*?) fois/)
+    expect(counterButtonElement).toBeInTheDocument()
+  })
 })

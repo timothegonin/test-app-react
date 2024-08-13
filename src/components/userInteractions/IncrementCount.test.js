@@ -1,8 +1,8 @@
-import { render, screen, } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen, fireEvent } from "@testing-library/react";
+// import userEvent from "@testing-library/user-event";
 import IncrementCount from "./IncrementCount";
 
-console.log(userEvent)
+// console.log(userEvent)
 
 /*
   clear: [Function: clear],
@@ -55,5 +55,16 @@ describe('Learn User Interacationss', () => {
     render(<IncrementCount/>)
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
     expect(counterButtonElement).toHaveStyle('background-color: orange')
+  })
+
+  it("Should display 1 in counter and button before click", () => {
+    render(<IncrementCount/>)
+    const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    fireEvent.click(counterButtonElement)
+    expect(counterButtonElement).toHaveTextContent('Vous avez cliqué 1 fois')
+
+    const counterElement = screen.getByRole('heading', {level:1})
+    expect(counterElement).toHaveTextContent('1')
+
   })
 })

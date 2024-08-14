@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
-import FindByRole from './components/Queries/FindByRole';
+import IncrementCount from './components/userInteractions/IncrementCount';
 
 function App() {
   return (
     <div className="App">
-      <FindByRole/>
+      <IncrementCount/>
     </div>
   );
 }

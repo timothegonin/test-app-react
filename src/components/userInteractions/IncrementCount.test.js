@@ -45,6 +45,12 @@ describe('Learn User Interacationss', () => {
     // const counterButtonElement = screen.getByText(/Vous avez cliqué (.*?) fois/)
     expect(counterButtonElement).toBeInTheDocument()
   })
+  it("Should rendre the checkbox correctly", () => {
+    render(<IncrementCount/>)
+    const checkboxElement = screen.getByRole('checkbox')
+    expect(checkboxElement).toBeInTheDocument()
+    expect(checkboxElement).not.toBeChecked()
+  })
   it("Should show 0 in counter and button before click", () => {
     render(<IncrementCount/>)
     const counterElement = screen.getByRole('heading', {level:1})

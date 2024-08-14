@@ -73,7 +73,11 @@ describe('Learn User Interacationss', () => {
     const user = userEvent.setup()
     console.log(user)
     render(<IncrementCount/>)
+    const checkboxElement = screen.getByRole('checkbox')
+    await user.click(checkboxElement)
+
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    expect(counterButtonElement).toBeEnabled()
     await user.click(counterButtonElement)
     expect(counterButtonElement).toHaveTextContent('Vous avez cliqué 1 fois')
 
@@ -83,14 +87,23 @@ describe('Learn User Interacationss', () => {
   it("Should display 'cyan' in the button after click", async () => {
     const user = userEvent.setup()
     render(<IncrementCount/>)
+    const checkboxElement = screen.getByRole('checkbox')
+    await user.click(checkboxElement)
+
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    expect(counterButtonElement).toBeEnabled()
+    
     await user.click(counterButtonElement)
     expect(counterButtonElement).toHaveStyle('background-color: cyan')
   })
   it("Sould display 'orange' in the button and 2 in button and counter", async () => {
     const user = userEvent.setup()
     render(<IncrementCount/>)
+    const checkboxElement = screen.getByRole('checkbox')
+    await user.click(checkboxElement)
+
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    expect(counterButtonElement).toBeEnabled()
     const counterElement = screen.getByRole('heading', {level:1})
     await user.dblClick(counterButtonElement)
     expect(counterButtonElement).toHaveStyle('background-color: orange')
@@ -100,7 +113,11 @@ describe('Learn User Interacationss', () => {
   it("Sould display 'cyan' in the button and 3 in button and counter after 3 click (1+2doubleClick))", async () => {
     const user = userEvent.setup()
     render(<IncrementCount/>)
+    const checkboxElement = screen.getByRole('checkbox')
+    await user.click(checkboxElement)
+
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    expect(counterButtonElement).toBeEnabled()
     const counterElement = screen.getByRole('heading', {level:1})
     await user.click(counterButtonElement)
     expect(counterButtonElement).toHaveStyle('background-color: cyan')

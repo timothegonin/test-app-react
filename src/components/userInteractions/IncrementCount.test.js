@@ -47,7 +47,7 @@ describe('Learn User Interacationss', () => {
   })
   it("Should rendre the checkbox correctly", () => {
     render(<IncrementCount/>)
-    const checkboxElement = screen.getByRole('checkbox')
+    const checkboxElement = screen.getByRole('checkbox', {name:/j'accepte les termes et conditions/i})
     expect(checkboxElement).toBeInTheDocument()
     expect(checkboxElement).not.toBeChecked()
   })
@@ -73,7 +73,7 @@ describe('Learn User Interacationss', () => {
     const user = userEvent.setup()
     console.log(user)
     render(<IncrementCount/>)
-    const checkboxElement = screen.getByRole('checkbox')
+    const checkboxElement = screen.getByRole('checkbox', {name:/j'accepte les termes et conditions/i})
     await user.click(checkboxElement)
 
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
@@ -87,7 +87,7 @@ describe('Learn User Interacationss', () => {
   it("Should display 'cyan' in the button after click", async () => {
     const user = userEvent.setup()
     render(<IncrementCount/>)
-    const checkboxElement = screen.getByRole('checkbox')
+    const checkboxElement = screen.getByRole('checkbox', {name:/j'accepte les termes et conditions/i})
     await user.click(checkboxElement)
 
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
@@ -99,7 +99,7 @@ describe('Learn User Interacationss', () => {
   it("Sould display 'orange' in the button and 2 in button and counter", async () => {
     const user = userEvent.setup()
     render(<IncrementCount/>)
-    const checkboxElement = screen.getByRole('checkbox')
+    const checkboxElement = screen.getByRole('checkbox', {name:/j'accepte les termes et conditions/i})
     await user.click(checkboxElement)
 
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
@@ -113,7 +113,7 @@ describe('Learn User Interacationss', () => {
   it("Sould display 'cyan' in the button and 3 in button and counter after 3 click (1+2doubleClick))", async () => {
     const user = userEvent.setup()
     render(<IncrementCount/>)
-    const checkboxElement = screen.getByRole('checkbox')
+    const checkboxElement = screen.getByRole('checkbox', {name:/j'accepte les termes et conditions/i})
     await user.click(checkboxElement)
 
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})

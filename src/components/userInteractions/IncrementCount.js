@@ -21,7 +21,8 @@ function IncrementCount() {
     <>
       <h1>{count}</h1>
       <div>
-        <input type="checkbox" checked={isChecked} onChange={(e)=> setIsChecked(e.target.checked)}/>
+        <input type="checkbox" id='accept-terms' checked={isChecked} onChange={(e)=> setIsChecked(e.target.checked)}/>
+        <label htmlFor="accept-terms">J'accepte les termes et conditions</label>
       </div>
       <button style={{...btnStyle, backgroundColor: btnColor}} onClick={handleClick} disabled={!isChecked}>Vous avez cliqué {count} fois</button>
     </>

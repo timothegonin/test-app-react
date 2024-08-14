@@ -69,4 +69,11 @@ describe('Learn User Interacationss', () => {
     const counterElement = screen.getByRole('heading', {level:1})
     expect(counterElement).toHaveTextContent('1')
   })
+  it("Should display 'cyan' in the button after click", async () => {
+    const user = userEvent.setup()
+    render(<IncrementCount/>)
+    const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    await user.click(counterButtonElement)
+    expect(counterButtonElement).toHaveStyle('background-color: cyan')
+  })
 })

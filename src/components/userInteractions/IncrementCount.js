@@ -10,9 +10,11 @@ const btnStyle = {
 function IncrementCount() {
   const [count, setCount] = useState(0)
   const [btnColor, setBtnColor] = useState('orange')
+  const colorButton = btnColor === 'orange' ? 'cyan' : 'orange'
 
   const handleClick = () => {
     setCount(count+1)
+    setBtnColor(colorButton)
   }
   return (
     <>

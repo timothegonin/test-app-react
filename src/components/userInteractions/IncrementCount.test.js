@@ -58,6 +58,11 @@ describe('Learn User Interacationss', () => {
     expect(counterElement).toHaveTextContent('0')
     expect(counterButtonElement).toHaveTextContent('Vous avez cliqué 0 fois')
   })
+  it("Should dispaly button with 'disabled' status", () => {
+    render(<IncrementCount/>)
+    const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    expect(counterButtonElement).not.toBeEnabled()
+  })
   it("Should display the initial color of the button 'Orange'", () => {
     render(<IncrementCount/>)
     const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})

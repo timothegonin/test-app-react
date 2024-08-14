@@ -10,6 +10,7 @@ const btnStyle = {
 function IncrementCount() {
   const [count, setCount] = useState(0)
   const [btnColor, setBtnColor] = useState('orange')
+  const [isChecked, setIsChecked] = useState(false)
   const colorButton = btnColor === 'orange' ? 'cyan' : 'orange'
 
   const handleClick = () => {
@@ -19,7 +20,10 @@ function IncrementCount() {
   return (
     <>
       <h1>{count}</h1>
-      <button style={{...btnStyle, backgroundColor: btnColor}} onClick={handleClick}>Vous avez cliqué {count} fois</button>
+      <div>
+        <input type="checkbox" checked={isChecked} onChange={(e)=> setIsChecked(e.target.checked)}/>
+      </div>
+      <button style={{...btnStyle, backgroundColor: btnColor}} onClick={handleClick} disabled={!isChecked}>Vous avez cliqué {count} fois</button>
     </>
   )
 }

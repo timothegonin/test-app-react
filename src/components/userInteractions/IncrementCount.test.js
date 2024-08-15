@@ -144,4 +144,12 @@ describe('Learn User Interacationss', () => {
     expect(checkboxElement).not.toBeChecked()
     expect(counterButtonElement).toBeDisabled()
   })
+
+  it("Should not displaying popup before mouseOver", () => {
+    render(<IncrementCount/>)
+    // const popupElement = screen.queryByText(/lorem/i)
+    const popupElement = screen.queryByText("lorem", {exact: false})
+    // expect(popupElement).not.toBeInTheDocument()
+    expect(popupElement).toBeNull()
+  } )
 })

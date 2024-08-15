@@ -149,7 +149,21 @@ describe('Learn User Interacationss', () => {
     render(<IncrementCount/>)
     // const popupElement = screen.queryByText(/lorem/i)
     const popupElement = screen.queryByText("lorem", {exact: false})
-    // expect(popupElement).not.toBeInTheDocument()
+    // expect(popupElement).toBeInTheDocument()
     expect(popupElement).toBeNull()
-  } )
+  })
+
+  it("Should displaying popup after mouseOver, and hidden it at mouseOut", async () => {
+    const user = userEvent.setup()
+    render(<IncrementCount/>)
+    //HOVER 
+    const termsElement = screen.getByText('les termes et conditions', {exact: true})
+    expect(termsElement).toBeInTheDocument()
+    await user.hover(termsElement)
+    const popupElement = screen.queryByText("lorem", {exact: false})
+    expect(popupElement).toBeInTheDocument()
+    //UNHOVER
+    await user.unhover(termsElement)
+    expect(popupElement).not.toBeInTheDocument()
+  })
 })

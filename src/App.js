@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
-import IncrementCount from './components/userInteractions/IncrementCount';
+import TypeClear from './components/userInteractions/TypeClear'
 
 function App() {
   return (
     <div className="App">
-      <IncrementCount/>
+      <TypeClear/>
     </div>
   );
 }

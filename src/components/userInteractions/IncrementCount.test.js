@@ -166,4 +166,18 @@ describe('Learn User Interacationss', () => {
     await user.unhover(termsElement)
     expect(popupElement).not.toBeInTheDocument()
   })
+
+  it("Should focus checkbox after TAB, then on the button after checking checkbox", async () => {
+    const user = userEvent.setup()
+    render(<IncrementCount/>)
+    const checkboxElement = screen.getByRole('checkbox', {name:/j'accepte les termes et conditions/i})
+    const counterButtonElement = screen.getByRole("button", {name : /Vous avez cliqué \d+ fois/})
+    expect(checkboxElement).not.toHaveFocus()
+    expect(counterButtonElement).not.toHaveFocus()
+    await user.tab()
+    expect(checkboxElement).toHaveFocus()
+    await user.click(checkboxElement)
+    await user.tab()
+    expect(counterButtonElement).toHaveFocus()
+  })
 })

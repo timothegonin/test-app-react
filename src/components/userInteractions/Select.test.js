@@ -26,5 +26,13 @@ describe('Exercice slectOptions & deselectOptions', () => {
     
     expect(screen.queryByRole('option',{name: 'Option 3'}).selected).toBeFalsy()
     expect(screen.getByRole('option',{name: 'Option 3'}).selected).toBe(false)
+
+    //deselect
+    await user.deselectOptions(select,option1)
+    expect(select).toHaveValue(['Option 2'])
+    //select
+    const option3 = screen.getByText('Option 3')
+    await user.selectOptions(select,option3)
+    expect(select).toHaveValue(['Option 2', 'Option 3'])
   })
 })

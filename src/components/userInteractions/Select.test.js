@@ -1,0 +1,30 @@
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import Select from "./Select";
+
+describe('Exercice slectOptions & deselectOptions', () => {
+  test('Tester la selection', async ()=> {
+    const options = ['Option 1', 'Option 2', 'Option 3']
+    const user = userEvent.setup();
+    render(<Select options={options}/>)
+
+    //Select Option 1 & 2
+    const select = screen.getByRole("listbox")
+    const option1 = screen.getByText('Option 1')
+    const option2 = screen.getByText('Option 2')
+    expect(option1).toBeInTheDocument()
+    expect(option2).toBeInTheDocument()
+    expect(select).toBeInTheDocument()
+    await user.selectOptions(select, ['Option 1', 'Option 2'])
+    expect(select).toHaveValue(['Option 1', 'Option 2'])
+
+    expect(screen.getByRole('option',{name: 'Option 1'}).selected).toBeTruthy()
+    expect(screen.getByRole('option',{name: 'Option 1'}).selected).toBe(true)
+    
+    expect(screen.getByRole('option',{name: 'Option 2'}).selected).toBeTruthy()
+    expect(screen.getByRole('option',{name: 'Option 2'}).selected).toBe(true)
+    
+    expect(screen.queryByRole('option',{name: 'Option 3'}).selected).toBeFalsy()
+    expect(screen.getByRole('option',{name: 'Option 3'}).selected).toBe(false)
+  })
+})

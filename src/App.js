@@ -1,11 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
-import FindByRole from './components/Queries/FindByRole';
+import Select from './components/userInteractions/Select';
 
 function App() {
+  const options = ['Option 1', 'Option 2', 'Option3']
   return (
     <div className="App">
-      <FindByRole/>
+      <Select options={options}/>
     </div>
   );
 }
